@@ -101,6 +101,20 @@ namespace imv
             if (e.KeyCode == Keys.Escape)
                 Close();
 
+            // F1 shows the help.
+            if (e.KeyCode == Keys.F1)
+            {
+                string helpText = @"Keyboard shortcuts:
+
+Left/Right - go to previous/next image
+1 - display image at original size
+F - scale image to fit into current window size
+F11 - toggle fullscreen mode (removes window borders)
+Esc - close the program
+F1 - show this help";
+                MessageBox.Show(helpText, "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             // Left/Right move the the previous/next image.
             if (e.KeyCode == Keys.Left)
                 SetImageIndex(ImageIndex - 1);
